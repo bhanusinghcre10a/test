@@ -14,6 +14,7 @@ import { user } from '../controller/viewcontroller';
 const loginForm = document.querySelector('.login-form');
 const users = document.querySelector('.allusers');
 const profile = document.querySelector('.profile');
+const refresh = document.querySelector('.d2');
 
 const signupForm = document.querySelector('.signup-form');
 const blogss = document.querySelector('.head1');
@@ -40,23 +41,8 @@ if (signupForm) {
 
 const blogloder = async obj => {
   await obj.getblogs();
-
   try {
-    const res1 = await axios(
-      `https://cors-anywhere.herokuapp.com/https://hacker-news.firebaseio.com/v0/item/22175019.json?print=pretty`
-    );
-    const res2 = await axios(
-      `https://cors-anywhere.herokuapp.com/https://hacker-news.firebaseio.com/v0/item/21260214.json?print=pretty`
-    );
-    const res3 = await axios(
-      `https://cors-anywhere.herokuapp.com/https://hacker-news.firebaseio.com/v0/item/21260364.json?print=pretty`
-    );
-    console.log(res1);
-    console.log(res2);
-    console.log(res3);
-    console.log('test');
-
-    blogview.renderResults(res1, res2, res3);
+    blogview.renderblogs(obj.result);
   } catch (error) {
     console.log(error);
   }
@@ -93,3 +79,7 @@ if (profile) {
   const us = new User();
   userloader(us);
 }
+refresh.addEventListener('click', function() {
+  const blg = new Blogs();
+  blogloder(blg);
+});

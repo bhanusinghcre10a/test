@@ -8,7 +8,6 @@ export default class Blogs {
       const res = await axios(
         `https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty`
       );
-      console.log(res.data);
       this.result = res.data;
     } catch (error) {
       console.log(error);
