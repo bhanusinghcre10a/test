@@ -15,6 +15,12 @@ exports.login = catchasync(async (req, res, next) => {
   });
 });
 
+exports.video = catchasync(async (req, res, next) => {
+  res.status(200).render('video.html', {
+    title: 'justcode  | video'
+  });
+});
+
 exports.signup = catchasync(async (req, res, next) => {
   res.status(200).render('signup', {
     title: 'justcode | signup'

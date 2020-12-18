@@ -34,6 +34,7 @@
     "node-sass": "^4.12.0",
     "nodemailer": "^6.3.0",
     "pug": "^2.0.4",
+    "simple-peer": "^9.9.3",
     "socket.io": "^2.3.0",
     "swig": "^1.4.2",
     "validator": "^11.1.0",
